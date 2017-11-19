@@ -1,0 +1,240 @@
+[colors]
+;background = ${xrdb:color0:#222}
+background = #222
+background-alt = #444
+;foreground = ${xrdb:color7:#222}
+foreground = #000000
+foreground-abc = #dfdfdf
+foreground-alt = #555
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+[bar/example]
+
+;monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 40
+;offset-x = 1%
+;offset-y = 1%
+;radius = 6.0
+fixed-center = true
+
+background = ${colors.primary}
+foreground = ${colors.foreground}
+
+line-size = 1
+;nm-device-wireless
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 2
+module-margin-right = 2
+
+font-0 = fixed:pixelsize=11;4
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;2
+font-2 = siji:pixelsize=11;4
+font-3 = FontAwesome:size=11;4
+font-4 = WunconSiji:size=11;4
+
+modules-left = i3
+modules-center = timeDate
+modules-right = xkeyboard volume battery powermenu
+
+tray-position = right
+tray-padding = 2
+;tray-transparent = true
+;tray-background = #0063ff
+
+;wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+; Current window 
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-underline = ${colors.secondary}
+
+label-layout =  %layout%
+label-layout-underline = ${colors.secondary}
+
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-background = ${colors.secondary}
+label-indicator-underline = ${colors.secondary}
+
+[module/i3]
+type = internal/i3
+
+index-sort = true
+enable-click = true
+strip-wsnumbers = true
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 10;
+ws-icon-default = 
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor
+label-focused = %icon%  
+label-focused-background = ${colors.background-alt}
+label-focused-underline = ${colors.primary}
+label-focused-padding = 5
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %icon% 
+label-unfocused-padding = 5
+
+; visible = Active workspace on unfocused monitor
+label-visible = %icon%  
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %icon%  
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 5
+
+[module/wireless]
+type = internal/network
+interface = enp0s31f6
+interval = 3.0
+
+format-connected-padding = 1
+format-disconnected-padding = 1
+
+format-connected = <label-connected>
+format-connected-underline = ${colors.white}
+format-disconnected-underline = ${colors.gray}
+
+label-connected = %essid%
+label-disconnected = 
+label-disconnected-foreground = ${colors.gray}
+
+; Shows song currently playing ... Pausing music doesn't work
+[module/gpmdp]
+type = custom/script
+interval = 1
+bar-width = 50%
+label-maxlen = 40;
+
+label = %output%
+exec = ~/scripts/google_play_music_desktop_player_api.py
+
+[module/backlight]
+type = internal/backlight
+
+; Use the following command to list available cards:
+; $ ls -1 /sys/class/backlight/
+card = intel_backlight
+format =  <label>
+label = %percentage%
+
+[module/timeDate]
+type = internal/date
+interval = 1
+date = %e %B %Y
+time = %H:%M:%S
+format-underline = #0a6cf5
+label =  %time% |  %date%
+
+[module/volume]
+type = internal/volume
+
+format-volume = <ramp-volume> <label-volume>
+format-muted = <label-muted>
+
+label-volume = %percentage%
+label-muted =  0%
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+;format-charging-underline = #ffb52a
+
+format-discharging = <ramp-capacity> <label-discharging>
+;format-discharging-underline = ${self.format-charging-underline}
+format-full = <label-full>
+
+label-charging = %percentage%
+label-discharging = %percentage%
+label-full =  %percentage%
+
+ramp-capacity-0 =  
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+[module/powermenu]
+type = custom/menu
+
+format-spacing = 1
+
+label-open = 
+label-open-foreground = ${colors.foreground}
+label-close =  cancel
+label-close-foreground = ${colors.foreground}
+label-separator = |
+label-separator-foreground = ${colors.foreground}
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = /sbin/reboot
+
+menu-2-0 = power off
+menu-2-0-exec = shutdown -h now
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini

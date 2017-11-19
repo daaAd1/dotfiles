@@ -1,0 +1,41 @@
+#define base00 #181818
+#define base01 #282828
+#define base02 #383838
+#define base03 #585858
+#define base04 #b8b8b8
+#define base05 #d8d8d8
+#define base06 #e8e8e8
+#define base07 #f8f8f8
+#define base08 #ab4642
+#define base09 #dc9656
+#define base0A #f7ca88
+#define base0B #a1b56c
+#define base0C #86c1b9
+#define base0D #7cafc2
+#define base0E #ba8baf
+#define base0F #a16946
+
+
+! Rofi config
+rofi.location:          0
+rofi.color-enabled:     true
+!                       'background', 'border'
+rofi.color-window:      argb:dc111111, argb:dc111111
+! State:                'bg',          'fg',   'bgalt',       'hlbg',        'hlfg'
+rofi.color-normal:      argb:00333333, #ffffff, argb:00333333, argb:00333333, argb:ffefa211
+rofi.color-urgent:      argb:00333333, #ffffff, argb:00333333, argb:00333333, argb:ffefa211
+rofi.color-active:      argb:00333333, #ffffff, argb:00333333, argb:00333333, argb:ffefa211
+rofi.separator-style:   dash
+rofi.padding:           30
+rofi.hide-scrollbar:    true
+rofi.line-margin:       5
+rofi.fake-transparency: true
+rofi.yoffset:           0
+rofi.xoffset:           0
+rofi.font:              Source Code Pro 18
+rofi.lines:				6
+
+! Not used parameters
+!rofi.fullscreen:        true
+!rofi.width:             1366
+
