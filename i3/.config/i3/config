@@ -58,7 +58,7 @@ font pango:adobe-sans
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -199,21 +199,21 @@ bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
 # put apps to right workspaces
 assign [class="Google-chrome"] $ws1
-assign [class="Gnome-terminal"] $ws2 
+assign [class="Termite"] $ws2 
 assign [class="Sublime_text"] $ws3
 assign [class="Thunar"] $ws4
 assign [class="Google Play Music Desktop Player"] $ws10
 
 # starting new chrome tab or window stacks tabbed
-for_window [instance="google-chrome"] focus right; splitv; focus left, move right; layout tabbed
+for_window [instance="google-chrome"] layout tabbed
 
 # startup apps
-exec_always --no-startup-id feh --bg-scale ~/Images/wallpaper3.png
+exec_always --no-startup-id feh --bg-scale ~/Images/wallpaper4.png
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id compton -D
 exec --no-startup-id google-chrome
-exec --no-startup-id gnome-terminal
+exec --no-startup-id termite
 exec --no-startup-id google-play-music-desktop-player
 exec --no-startup-id subl
 
