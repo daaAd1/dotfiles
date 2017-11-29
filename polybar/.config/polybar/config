@@ -105,6 +105,7 @@ label =  %time% |  %date%
 
 [module/volume]
 type = internal/volume
+master-soundcard = default
 
 format-volume = <ramp-volume> <label-volume>
 format-muted = <label-muted>

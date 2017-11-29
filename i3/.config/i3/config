@@ -120,8 +120,6 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-
-
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -208,7 +206,7 @@ assign [class="Google Play Music Desktop Player"] $ws10
 for_window [instance="google-chrome"] layout tabbed
 
 # startup apps
-exec_always --no-startup-id feh --bg-scale ~/Images/wallpaper4.png
+exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id compton -D
@@ -218,5 +216,5 @@ exec --no-startup-id google-play-music-desktop-player
 exec --no-startup-id subl
 
 # gaps
-gaps inner 10
-gaps outer 10
+#gaps inner 10
+#gaps outer 10
