@@ -199,7 +199,9 @@ bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 assign [class="Google-chrome"] $ws1
 assign [class="Termite"] $ws2 
 assign [class="Sublime_text"] $ws3
-assign [class="Thunar"] $ws4
+assign [class="jetbrains-studio"] $ws4
+assign [class="Thunar"] $ws5
+assign [class="Franz"] $ws9
 assign [class="Google Play Music Desktop Player"] $ws10
 
 # starting new chrome tab or window stacks tabbed
@@ -213,6 +215,7 @@ exec_always --no-startup-id compton -D
 exec --no-startup-id google-chrome
 exec --no-startup-id termite
 exec --no-startup-id google-play-music-desktop-player
+exec --no-startup-id franz
 exec --no-startup-id subl
 
 # gaps
