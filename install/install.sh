@@ -104,6 +104,8 @@ sudo dnf install -y paper-icon-theme
 # ****************** gtk-themes *********************
 # arc-theme
 sudo dnf install -y arc-theme
+# lxappearance for setting it up
+sudo dnf install -y lxappearance
 
 # google-play-music-desktop-player
 #sudo dnf install google-play-music-desktop-player-4.4.1.x86_64.rpm
@@ -146,6 +148,10 @@ stow fonts
 stow scripts
 stow wallpaper
 
+# ****************** lid close -> suspend + lock *********************
+sudo cp ~/dotfiles/scripts/scripts/pylock.py /usr/bin/
+sudo cp ~/dotfiles/install/i3lock.service /etc/systemd/system
+sudo systemctl enable i3lock.service 
 
 
 

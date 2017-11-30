@@ -215,7 +215,7 @@ exec_always --no-startup-id compton -D
 exec --no-startup-id google-chrome
 exec --no-startup-id termite
 exec --no-startup-id google-play-music-desktop-player
-exec --no-startup-id franz
+exec --no-startup-id /opt/./franz-5.0.0-beta.14-x86_64.AppImage
 exec --no-startup-id subl
 
 # gaps
