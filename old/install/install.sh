@@ -2,18 +2,18 @@
 # Install file
 
 # ****************** dependencies *********************
-sudo dnf install -y clang make autoconf xcb-proto jsoncpp libmpdclient libxkbcommon exo i3-ipc network-manager-applet
-sudo dnf install -y automake pkg-config flex bison cmake gperf gtk-doc intltool vala xfce4-dev-tools
-sudo dnf install -y @development-tools help2man
-sudo yum install -y compat-libstdc++-296.i686 compat-libstdc++-33.i686 ncurses-libs.i686 compat-libstdc++-33.x86_64
-sudo yum install -y zlib.i686 ncurses-libs.i686 bzip2-libs.i6861
+sudo apt install -y clang make autoconf xcb-proto jsoncpp libmpdclient libxkbcommon exo i3-ipc network-manager-applet
+sudo apt install -y automake pkg-config flex bison cmake gperf gtk-doc intltool vala xfce4-dev-tools
+sudo apt install -y @development-tools help2man
+sudo apt install -y compat-libstdc++-296.i686 compat-libstdc++-33.i686 ncurses-libs.i686 compat-libstdc++-33.x86_64
+sudo apt install -y zlib.i686 ncurses-libs.i686 bzip2-libs.i6861
 
 # ****************** library dependencies *********************
-sudo dnf install -y xcb-util-devel xcb-util-wm-devel xcb-util-xrm-devel vala-devel 
-sudo dnf install -y gettext-devel xcb-util-image-devel clang-devel m4ri-devel libxkbcommon-x11-devel
-sudo dnf install -y glib2-devel gnutls-devel pcre2-devel  vte-devel vte3-devel libev-devel 
-sudo dnf install -y libX11-devel libXext-devel libXScrnSaver-devel libxkbfile-devel
-sudo yum install -y pam-devel alsa-lib-devel wireles-tools-devel libmpdclient-devel libcurl-devel
+sudo apt install -y xcb-util-devel xcb-util-wm-devel xcb-util-xrm-devel vala-devel 
+sudo apt install -y gettext-devel xcb-util-image-devel clang-devel m4ri-devel libxkbcommon-x11-devel
+sudo apt install -y glib2-devel gnutls-devel pcre2-devel  vte-devel vte3-devel libev-devel 
+sudo apt install -y libX11-devel libXext-devel libXScrnSaver-devel libxkbfile-devel
+sudo apt install -y pam-devel alsa-lib-devel wireles-tools-devel libmpdclient-devel libcurl-devel
 
 # ****************** google chrome *********************
 su -c "
